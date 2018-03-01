@@ -3,20 +3,18 @@ class Genre
   def initialize(name)
     @name = name
     @songs = []
-  end
+  end 
 
-  def add_song (song)
+  def add_song(song)
     @songs << song
     song.genre = self
   end
-
-  def songs
+  def songs 
     @songs
-  end
-
+  end 
   def artists
-    self.songs.collect do |song|
+    @songs.map do |song|
       song.artist
-    end
+    end 
   end
 end
